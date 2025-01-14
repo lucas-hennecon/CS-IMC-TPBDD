@@ -45,6 +45,10 @@ with pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE=
         for row in rows:
             # Créer un objet Node avec comme label Film et les propriétés adéquates
             # A COMPLETER
+            #print(row)
+            n = Node("Film", idFilm=row[0], primaryTitle=row[1], startYear=row[2] )
+
+
             importData.append(n)
             i += 1
 
@@ -55,7 +59,7 @@ with pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE=
         except Exception as error:
             print(error)
 
-    # Names
+    # Artist
     # En vous basant sur ce qui a été fait dans la section précédente, exportez les données de la table tNames
     # A COMPLETER
 
